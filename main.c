@@ -27,5 +27,7 @@ int main(void)
 
 	_printf("len mine: %d\n", _len);
 	printf("len C: %d\n", len);
+
+	_printf("%b\n", 98);
 	return (0);
 }

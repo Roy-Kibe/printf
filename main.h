@@ -13,6 +13,7 @@ int _printf(const char *format, ...);
 int print_string(va_list l);
 int print_char(va_list l);
 int print_int(va_list l);
+int print_binary(va_list l);
 int handle_format_specifier(const char* format, int* i, va_list args);
 
 #endif

@@ -11,6 +11,7 @@
  * printing function
  * Return: a pointer to the matching printing function
  */
+
 int handle_format_specifier(const char* format, int* i, va_list args)
 {
     switch (format[*i]) {
@@ -18,6 +19,7 @@ int handle_format_specifier(const char* format, int* i, va_list args)
         case 'c': return print_char(args);
         case '%': putchar(format[*i]); return 1;
         case 'd':case 'i': return print_int(args);
+        case 'b': return print_binary(args);
         default:  putchar('%'); putchar(format[*i]); return 2;
     }
 }
