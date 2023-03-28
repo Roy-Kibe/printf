@@ -10,36 +10,12 @@ int _printf(const char *format, ...) {
   va_start(args, format);
 
   for (i = 0; format[i] != '\0'; i++) {
-    if (format[i] == '%') {
-      /**If it comes across a %, look at the next character*/
-      i++;
-
-      switch (format[i]) {
-      case 's': {
-        chars_printed += print_string(args);
-        break;
-      }
-      case 'c': {
-        chars_printed += print_char(args);
-        break;
-      }
-      case 'i': {
-      }
-      case '%': {
-        putchar('%');
-        chars_printed++;
-        break;
-      }
-      default: {
-        /**If none in case, print it as is*/
-        putchar('%');
-        chars_printed++;
-        putchar(format[i]);
-        chars_printed++;
-        break;
-      }
-      }
-    } else {
+	if (format[i] == '%')
+	{
+        ++i;
+        chars_printed += handle_format_specifier(format, &i, args);
+    } else
+	{
       /*Normal characters*/
       putchar(format[i]);
       chars_printed++;
