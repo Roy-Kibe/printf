@@ -17,6 +17,7 @@ int handle_format_specifier(const char* format, int* i, va_list args)
         case 's': return print_string(args);
         case 'c': return print_char(args);
         case '%': putchar(format[*i]); return 1;
+        case 'd':case 'i': return print_int(args);
         default:  putchar('%'); putchar(format[*i]); return 2;
     }
 }

@@ -22,7 +22,10 @@ int main(void)
 	len = printf("Character:[%c, %c, %c]\n", 'H', 'c', '@');
 	printf("%% wtf\n");
 	printf("%% wtf\n");
+	_printf("Negative:[%d]\n", -762534);
+	printf("Negative:[%d]\n", -762534);
 
-	printf("len mine: %d\nlen C: %d\n", _len, len);
+	_printf("len mine: %d\n", _len);
+	printf("len C: %d\n", len);
 	return (0);
 }
