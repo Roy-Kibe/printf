@@ -15,8 +15,8 @@ int num = va_arg(l, int);
 char buffer[32];
 snprintf(buffer, 32, "%d", num);
 
-while
-	buffer[len] != '\0') len++;
+while (buffer[len] != '\0')
+	len++;
 
 for (j = 0; buffer[j] != '\0'; j++)
 {
